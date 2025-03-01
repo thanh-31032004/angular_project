@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <section class="get-in-touch">
+        <h1 class="title">Edit Category</h1>
+        <form class="contact-form row" [formGroup]="categoryForm" (ngSubmit)="editCategory()">
+            <div class="form-field col-lg-12">
+                <label class="label" for="category-name">Category Title</label>
+                <input id="category-name" class="input-text js-input" type="text" required formControlName="title">
+            </div>
+            <div class="form-field col-lg-12">
+                <label class="label" for="category-description">Category Description</label>
+                <input id="category-description" class="input-text js-input" type="text" required
+                    formControlName="description">
+            </div>
+            <!-- <div class="form-field col-lg-12">
+                <label class="label" for="category-status">Status</label>
+                <select id="category-status" class="input-text js-input" required>
+                    <option value="">Select Status</option>
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                </select>
+            </div> -->
+            <div class="form-field col-lg-12">
+                <input class="submit-btn" type="submit" value="Add Category" [disabled]="categoryForm.invalid">
+            </div>
+        </form>
+    </section>
+</body>
+
+</html>

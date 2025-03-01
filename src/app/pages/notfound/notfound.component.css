@@ -1,0 +1,62 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Not Found Container */
+.not-found-container {
+    text-align: center;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Not Found Content */
+.not-found-content h1 {
+    font-size: 10em;
+    margin: 0;
+    color: #ff4757;
+}
+
+.not-found-content h2 {
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+.not-found-content p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Button */
+.btn-home {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #ff4757;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-home:hover {
+    background-color: #e84118;
+}
+
+.btn-home i {
+    margin-right: 10px;
+}

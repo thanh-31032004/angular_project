@@ -1,0 +1,53 @@
+<a class="btn btn-primary" [routerLink]="['/admin/products/add']">Add Product</a>
+<div class="container">
+    <div class="card-header">Product List</div>
+    <input type="text" class="form-control mb-3" placeholder="Search by name..." [(ngModel)]='searchQuery'
+        (input)="filterProducts()">
+    <table class="table border">
+        <thead class="text-lg-center">
+            <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Title</th>
+                <th scope="col">Price</th>
+                <th scope="col">Description</th>
+                <th scope="col">Category</th>
+                <th scope="col">Image</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- @for (product of filteredProducts; track product.id) { -->
+            <tr *ngFor="let product of paginatedProducts, let i = index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{product.title}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.category}}</td>
+                <td><img src="{{product.image}}" alt="" srcset="" class="img-fluid"></td>
+                <td>
+                    <a class="btn btn-warning m-1" [routerLink]="['/products',product.id]">View</a>
+                    <a class="btn btn-info m-1" [routerLink]="['/admin/products/edit', product.id]">Edit</a>
+                    <button class="btn btn-danger m-1" (click)="handleDeleteProduct(product.id)">Delete</button>
+                </td>
+            </tr>
+            <!-- } @empty {
+            <div class="class=" alert alert-warning text-center mt-3>
+                <strong>There are no items.</strong>
+            </div>
+            } -->
+        </tbody>
+    </table>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item" [class.disabled]="currentPage === 1">
+                <button class="page-link" (click)="previousPage()">Previous</button>
+            </li>
+            <li class="page-item" *ngFor="let page of pages" [class.active]="currentPage === page">
+                <button class="page-link" (click)="goToPage(page)">{{page}}</button>
+            </li>
+            <li class="page-item" [class.disabled]="currentPage === totalPages">
+                <button class="page-link" (click)="nextPage()">Next</button>
+            </li>
+        </ul>
+    </nav>
+</div>

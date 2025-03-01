@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Website</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+    <div>
+        <div class="header-blue">
+            <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
+                <div class="container">
+                    <a [routerLink]="['/']" class="navbar-brand">T-Store</a>
+                    <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="nav navbar-nav mr-auto">
+                            <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <div class="input-group">
+                                <input class="form-control search-field" type="search" name="search" id="search-field"
+                                    placeholder="Search...">
+                                <div class="input-group-append">
+                                    <button class="btn btn-light" type="button"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                        <span class="navbar-text">
+                            <a [routerLink]="['/login']" class="btn btn-light action-button">Log In</a>
+                            <!-- Changed class to btn -->
+                        </span>
+                        <a [routerLink]="['/signup']" class="btn btn-light action-button">Sign Up</a>
+                        <!-- Kept the original class -->
+                    </div>
+                </div>
+            </nav>
+            <div class="container hero">
+                <div class="row">
+                    <div class="col-12 col-md-6 offset-md-3 text-center">
+                        <h1 class="mb-4">Discover Your Perfect Products.</h1>
+                        <p class="mb-4">Find the latest trends and the best deals on our online store.</p>
+                        <button class="btn btn-light btn-lg action-button" type="button">Shop Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

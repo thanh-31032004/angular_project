@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <div>
+        <header class="header">
+            <h1>Product Detail Page</h1>
+        </header>
+        <div class="product-detail" *ngIf="product">
+            <div class="product-images">
+                <img src="{{product.image}}" alt="Product Image" class="main-image">
+                <div class="thumbnail-images">
+                    <img src="https://via.placeholder.com/100" alt="Thumbnail Image">
+                    <img src="https://via.placeholder.com/100" alt="Thumbnail Image">
+                    <img src="https://via.placeholder.com/100" alt="Thumbnail Image">
+                    <img src="https://via.placeholder.com/100" alt="Thumbnail Image">
+                </div>
+            </div>
+            <div class="product-info">
+                <h1>{{product.title}}</h1>
+                <p class="price">${{product.price}}</p>
+                <div class="rating">
+                    <span class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </span>
+                    <span class="rating-value">{{product.rating?.rate}}</span>
+                    <span class="views"> ({{product.rating?.count}}views)</span>
+                </div>
+                <p class="description">
+                    {{product.description}}
+                </p>
+                <div class="quantity">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" value="1">
+                </div>
+                <div class="buttons">
+                    <button class="btn add-to-cart">Add to Cart</button>
+                    <button class="btn buy-now">Buy Now</button>
+                </div>
+                <div class="auction">
+                    <h2>Place a Bid</h2>
+                    <form>
+                        <label for="bid-amount">Bid Amount:</label>
+                        <input type="number" id="bid-amount" name="bid-amount" min="1">
+                        <button type="submit" class="btn place-bid">Place Bid</button>
+                    </form>
+                </div>
+                <div class="product-tags">
+                    <strong>Tags:</strong>
+                    <a href="#">Tag1</a>, <a href="#">Tag2</a>, <a href="#">Tag3</a>
+                </div>
+            </div>
+        </div>
+        <div class="more-products">
+            <h2>More Products</h2>
+            <div class="product-grid">
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/150" alt="Product Image">
+                    <p class="product-title">Product 1</p>
+                    <p class="product-price">$20.00</p>
+                </div>
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/150" alt="Product Image">
+                    <p class="product-title">Product 2</p>
+                    <p class="product-price">$25.00</p>
+                </div>
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/150" alt="Product Image">
+                    <p class="product-title">Product 3</p>
+                    <p class="product-price">$15.00</p>
+                </div>
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/150" alt="Product Image">
+                    <p class="product-title">Product 4</p>
+                    <p class="product-price">$30.00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

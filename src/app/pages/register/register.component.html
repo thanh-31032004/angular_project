@@ -1,0 +1,58 @@
+<div class="container d-flex justify-content-center">
+    <div class="card mx-5 my-5">
+        <div class="card-body px-2">
+            <h2 class="card-heading px-3">Sign Up</h2>
+            <!-- <p-toast position="top-right"></p-toast> -->
+            <h5 class="card-subheading px-3 pb-3">It's quick and easy.</h5>
+            <form [formGroup]="userForm" (ngSubmit)="addUser()">
+                <div class="row rone">
+                    <div class="form-group col-md-5 fone">
+                        <input type="text" class="form-control" placeholder="First name" formControlName="username">
+                    </div>
+
+                </div>
+                <div class="row rtwo">
+                    <div class="form-group col-md-12 fthree">
+                        <input type="email" class="form-control" placeholder="Mobile number or Email"
+                            formControlName="email">
+                        @if(userForm.controls['email'].errors?.['required'] &&
+                        userForm.controls['email'].touched ) {
+                        <small class="text-danger text-small">Email is Required</small>
+                        } @if(userForm.controls['email'].errors?.['email'] &&
+                        userForm.controls['email'].touched ) {
+                        <small class="text-danger text-small">Định dạng email không đúng</small>
+                        }
+                        <small class="text-muted">
+                            <p class="para1 pt-2 pl-1">You'll need to confirm that email or phone belongs to you.</p>
+                        </small>
+                    </div>
+                </div>
+                <div class="row rthree">
+                    <div class="form-group col-md-5 ffour">
+                        <input type="password" class="form-control" placeholder="Password" formControlName="password">
+                        @if(userForm.controls['password'].errors?.['required'] &&
+                        userForm.controls['password'].touched ) {
+                        <small class="text-danger text-small">password is Required</small>
+                        } @if(userForm.controls['password'].errors?.['minLength'] &&
+                        userForm.controls['password'].touched ) {
+                        <small class="text-danger text-small">Password phải nhiều hơn 6 kí tự</small>
+                        }
+                    </div>
+                    <div class="form-group col-md-5 ffive">
+                        <input type="password" class="form-control ml-3" placeholder="Confirm password"
+                            formControlName="cfpassword">
+                    </div>
+                    <small class="text-muted px-3">
+                        <p class="para2 pl-3">Use 8 or more characters with a mix of letters,numbers &<br>symbols</p>
+                    </small>
+                </div>
+                <div class="row rfour">
+                    <div class="col-md-4 ml-3">
+                        <button type="submit" class="btn btn-primary mt-3" [disabled]="userForm.invalid">Sign
+                            up</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

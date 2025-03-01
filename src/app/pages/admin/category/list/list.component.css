@@ -1,0 +1,62 @@
+*{
+    /* text-align:center */
+    table{
+        object-fit: contain; /* Scale the image to fit within its container while preserving aspect ratio */
+        max-width: 100%; /* Ensure images don't exceed their container's width */
+        max-height: 100%; /* Ensure images don't exceed their container's height */
+      }
+}
+.container {
+  margin-top: 20px;
+}
+.card-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #dee2e6;
+  padding: 10px 15px;
+}
+.form-control {
+  margin-bottom: 15px;
+}
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  background-color: #fff;
+  border-collapse: collapse;
+}
+.table th, .table td {
+  padding: 12px;
+  vertical-align: middle;
+  text-align: center;
+  border-top: 1px solid #dee2e6;
+}
+.table thead th {
+  background-color: #343a40;
+  color: #fff;
+}
+.table tbody tr:nth-of-type(odd) {
+  background-color: #f2f2f2;
+}
+.table tbody tr:hover {
+  background-color: #e9ecef;
+}
+.btn {
+  font-size: 0.875rem;
+  padding: 5px 10px;
+}
+.img-fluid {
+  max-width: 100px;
+  height: auto;
+}
+.alert-warning {
+  background-color: #ffc107;
+  color: #856404;
+  border-color: #ffeeba;
+}
+/* styles.css or component-specific CSS file */
+.success-snackbar {
+  background-color: #4caf50; /* Green */
+  color: white;
+}

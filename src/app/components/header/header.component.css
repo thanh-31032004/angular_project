@@ -1,0 +1,38 @@
+.header-blue {
+    background:linear-gradient(135deg, #172a74, #21a9af);
+    background-color:#184e8e;
+    padding-bottom:80px;
+    font-family:'Source Sans Pro', sans-serif;
+  }
+  
+   /* Custom styles */
+        .header-blue {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .hero {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        /* Login and Signup Button */
+        .action-button {
+            margin-left: 10px;
+            /* Add spacing between buttons */
+        }
+
+        .login-btn {
+          background-color: transparent;
+          border: 2px solid #fff;
+          color:black; /* Changed text color to black */
+          padding: 8px 20px;
+          border-radius: 5px;
+          transition: background-color 0.3s ease;
+      }
+      
+
+        .login-btn:hover {
+            background-color: #fff;
+            color: #007bff;
+        }

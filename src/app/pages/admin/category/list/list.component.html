@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="card-header">Category List</div>
+    <table class="table border">
+        <thead class="text-lg-center">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- @for (product of filteredProducts; track product.id) { -->
+            <tr *ngFor="let c of category">
+                <th scope="row">{{c.id}}</th>
+                <td>{{c.title}}</td>
+                <td>{{c.description}}</td>
+                <td>
+                    <a class="btn btn-info m-1" [routerLink]="['/admin/category/edit',c.id]">Edit</a>
+                    <!-- <button class="btn btn-danger m-1" (click)="handleDeleteProduct(product.id)">Delete</button> -->
+                </td>
+            </tr>
+            <!-- } @empty {
+            <div class="class=" alert alert-warning text-center mt-3>
+                <strong>There are no items.</strong>
+            </div>
+            } -->
+        </tbody>
+    </table>
+
+</div>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <section class="get-in-touch">
+        <h1 class="title">Edit Product</h1>
+        <form class="contact-form row" [formGroup]="productForm" (ngSubmit)="editProduct()">
+            <div class="form-field col-lg-12">
+                <label class="label" for="product-name">Product Name</label>
+                <input id="product-name" class="input-text js-input" type="text" required formControlName="title">
+                @if(productForm.controls['title'].errors?.['required'] &&
+                productForm.controls['title'].touched ) {
+                <small class="text-danger text-small">Title is Required</small>
+                } @if(productForm.controls['title'].errors?.['minlength'] &&
+                productForm.controls['title'].touched ) {
+                <small class="text-danger text-small">Min Length is min 6 ky tu</small>
+                }
+            </div>
+            <div class="form-field col-lg-12">
+                <label class="label" for="product-description">Product Description</label>
+                <textarea id="product-description" class="input-text js-input" type="text" required
+                    formControlName="description"></textarea>
+                @if(productForm.controls['description'].errors?.['required'] &&
+                productForm.controls['description'].touched ) {
+                <small class="text-danger text-small">Description is Required</small>
+                }
+            </div>
+            <div class="form-field col-lg-12">
+                <label class="label" for="product-price">Product Price</label>
+                <input id="product-price" class="input-text js-input" type="number" required formControlName="price">
+                @if(productForm.controls['price'].errors?.['required'] &&
+                productForm.controls['price'].touched ) {
+                <small class="text-danger text-small">Price is Required</small>
+                } @if(productForm.controls['price'].errors?.['min'] &&
+                productForm.controls['price'].touched ) {
+                <small class="text-danger text-small">Giá trị lớn hơn 0</small>
+                }
+            </div>
+
+            <div class="form-field col-lg-12">
+                <label class="label" for="product-image">Product Image</label>
+                <input id="product-image" class="input-text js-input" type="text" required formControlName="image">
+                @if(productForm.controls['image'].errors?.['required'] &&
+                productForm.controls['image'].touched ) {
+                <small class="text-danger text-small">Image is Required</small>
+                }
+            </div>
+            <div class="form-field col-lg-12">
+                <label class="label" for="product-category">Product Category</label>
+                <select id="product-category" class="input-text js-input" required formControlName="category">
+                    <option value="">Select Category</option>
+                    <option *ngFor="let c of category" [value]="c.id">{{ c.title }}</option>
+                </select>
+                @if(productForm.controls['category'].errors?.['required'] &&
+                productForm.controls['category'].touched ) {
+                <small class="text-danger text-small">Category is Required</small>
+                }
+            </div>
+            <div class="form-field col-lg-12">
+                <input class="submit-btn" type="submit" value="Edit Product" [disabled]="productForm.invalid">
+            </div>
+        </form>
+    </section>
+</body>
+
+</html>

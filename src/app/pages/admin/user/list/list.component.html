@@ -1,0 +1,29 @@
+<!-- <a class="btn btn-primary" [routerLink]="['/admin/users/add']">Add User</a> -->
+<div class="container">
+    <div class="card-header">User List</div>
+
+    <table class="table border">
+        <thead class="text-lg-center">
+            <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users; let i = index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td>
+                    <button class="btn btn-danger m-1" (click)="handleDeleteUser(user.id)">Delete</button>
+                </td>
+            </tr>
+            <tr *ngIf="users.length === 0">
+                <td colspan="5" class="text-center">There are no users.</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
