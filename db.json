@@ -333,9 +333,9 @@
   ],
   "category": [
     {
-      "id": "1",
       "title": "Laptop",
-      "description": "máy tính làm việc"
+      "description": "máy tính làm việc",
+      "id": "1"
     },
     {
       "title": "Quần áo",
@@ -349,7 +349,7 @@
     },
     {
       "title": "Đồ gia dụng",
-      "description": "dsvdvvd11111",
+      "description": "d",
       "id": "4"
     }
   ],

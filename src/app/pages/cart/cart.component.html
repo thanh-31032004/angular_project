@@ -1,0 +1,19 @@
+<h2>Giỏ hàng</h2>
+
+<div *ngIf="cart.products.length === 0">
+    <p>Giỏ hàng trống.</p>
+</div>
+
+<div *ngFor="let item of cart.products" class="cart-item">
+    <img [src]="item.product.image" alt="{{ item.product.title }}" class="cart-img" />
+    <h3>{{ item.product.title }}</h3>
+    <p>Giá: {{ item.product.price }}$</p>
+
+    <div class="quantity">
+        <button (click)="changeQuantity(item.product.id, item.quantity - 1)">➖</button>
+        <span>{{ item.quantity }}</span>
+        <button (click)="changeQuantity(item.product.id, item.quantity + 1)">➕</button>
+    </div>
+
+    <button (click)="removeItem(item.product.id)">🗑️ Xóa</button>
+</div>

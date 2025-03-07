@@ -40,11 +40,14 @@
                     {{product.description}}
                 </p>
                 <div class="quantity">
-                    <label for="quantity">Quantity:</label>
-                    <input type="number" id="quantity" name="quantity" value="1">
+                    <label for="quantity-{{ product.id }}">Quantity:</label>
+                    <button (click)="decreaseQuantity(product.id)">-</button>
+                    <input type="number" id="quantity-{{ product.id }}" [(ngModel)]="quantities[product.id]" min="1"
+                        value=1 />
+                    <button (click)="increaseQuantity(product.id)">+</button>
                 </div>
                 <div class="buttons">
-                    <button class="btn add-to-cart">Add to Cart</button>
+                    <button class="btn add-to-cart" (click)="addToCart(product)">Add to Cart</button>
                     <button class="btn buy-now">Buy Now</button>
                 </div>
 

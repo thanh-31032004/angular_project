@@ -14,6 +14,7 @@ import { EditComponent } from './pages/admin/category/edit/edit.component';
 import { UpdateComponent } from './pages/admin/products/edit/edit.component';
 import { adminGuard } from './Guard/admin.guard';
 import { ListUserComponent } from './pages/admin/user/list/list.component';
+import { CartComponent } from './pages/cart/cart.component';
 
 
 
@@ -56,7 +57,6 @@ export const routes: Routes = [
                 path: 'users/list',
                 component: ListUserComponent
             }
-
         ],
     },
     {
@@ -87,6 +87,7 @@ export const routes: Routes = [
                 path: 'signup',
                 component: RegisterComponent
             },
+            { path: 'cart', component: CartComponent }
         ]
     },
     {
