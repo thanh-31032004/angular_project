@@ -15,7 +15,7 @@ export class AuthService {
       map(users => {
         if (users.length > 0) {
           const token = 'Khoa-admin';
-          sessionStorage.setItem('token', token);
+          localStorage.setItem('token', token);
           // console.log(token)
           return true;
         } else {

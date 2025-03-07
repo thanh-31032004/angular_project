@@ -1,5 +1,4 @@
 export interface Product {
-
     id: number,
     title: string,
     price: number,
@@ -7,8 +6,13 @@ export interface Product {
     category: string,
     image: string,
     showProduct: boolean,
-    rating?: {
-        rate: number,
-        count: number
-    },
 }
+export type CartItem = {
+    product: Product;
+    quantity: number;
+};
+export type Cart = {
+    id: string;
+    user: string;
+    products: CartItem[];
+};
